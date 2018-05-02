@@ -14,6 +14,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
 
 /**
  *
@@ -30,15 +34,12 @@ public class TesteRonaldoController implements Initializable {
     @FXML
     private Label lblresult;
     @FXML
-    private Button soma;
-    @FXML
-    private Button subtracao;
-    @FXML
     private TextField txtnumero1;
     @FXML
     private TextField txtnumero2;
-    @FXML
     private TextField txtResultado;
+    @FXML
+    private TextField txtresult;
 
  
     @FXML
@@ -85,5 +86,25 @@ public class TesteRonaldoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void abrirCadastroAluno(ActionEvent event){
+try{
+    FXMLLoader fxmlLoader = new FXMLLoader();
+    fxmlLoader.setLocation(getClass().getResource("Aluno.fxml"));
+    Scene scene = new Scene(fxmlLoader.load(),900,682);
+    Stage stage = new Stage();
+    stage.setTitle("Cadastrar Aluno");
+    stage.setScene(scene);
+    stage.show();
+}
+catch(IOException e){
+
+}
+    }
+
+    @FXML
+    private void fecharProjeto(ActionEvent event) {
+    }
     
 }
